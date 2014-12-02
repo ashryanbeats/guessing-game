@@ -14,26 +14,20 @@
 
 <body>
 	<div class="container">	
-		<div class="row">
+		<div class="row" id="game-title">
 			<h1 class="col-md-12 text-center">Guessing Game</h1>
 		</div>
 
-		<div class="row">	
+		<div class="row" id="submit-area">	
 			<div class="col-md-12 text-center">
-					<input type="text"placeholder="Enter your guess">
-					<button type="submit">Submit</button>
+					<input type="text" placeholder="Enter your guess">
+					<input class="btn btn-default" type="submit" value="Submit">
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-12 text-center">			
-					<button type="button">Give me the answer</button>
-					<button type="button">Restart</button>
-			</div>		
-		</div>		
 		
-		<div class="row">	
+		<div class="row" id="previous-answers">	
 			<div class="col-md-12">
-				<ul id="previous-answers">
+				<ul>
 					<li class="warm text-nowrap text-center col-md-2">Warm ##</li>
 					<li class="cold text-nowrap text-center col-md-2">Cold ##</li>
 					<li class="warm text-nowrap text-center col-md-2">Warm ##</li>
@@ -43,6 +37,14 @@
 				</ul>
 			</div>
 		</div>
+
+		<div class="row" id="escape-buttons">
+			<div class="col-md-12 text-center">			
+				<input class="btn btn-warning" type="button" value="Just give me the answer">
+				<input class="btn btn-danger" type="button" value="Restart">
+			</div>		
+		</div>		
+
 		
 	</div>
 
