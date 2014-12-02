@@ -13,13 +13,40 @@
 </head>
 
 <body>
-	<h1>Guessing Game</h1>
-	
-	<input type="text" placeholder="Enter your guess">
-	<button type="submit">Submit</button>
-	<button type="button">Give me the answer</button>
-	<button type="button">Restart</button>
+	<div class="container">	
+		<div class="row">
+			<h1 class="col-md-12 text-center">Guessing Game</h1>
+		</div>
 
+		<div class="row">	
+			<div class="col-md-12 text-center">
+					<input type="text"placeholder="Enter your guess">
+					<button type="submit">Submit</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-center">			
+					<button type="button">Give me the answer</button>
+					<button type="button">Restart</button>
+			</div>		
+		</div>		
+		
+		<div class="row">	
+			<div class="col-md-12">
+				<ul id="previous-answers">
+					<li class="warm text-nowrap text-center col-md-2">Warm ##</li>
+					<li class="cold text-nowrap text-center col-md-2">Cold ##</li>
+					<li class="warm text-nowrap text-center col-md-2">Warm ##</li>
+					<li class="cold text-nowrap text-center col-md-2">Cold ##</li>
+					<li class="cold text-nowrap text-center col-md-2">Cold ##</li>
+					<li class="win text-nowrap text-center col-md-2">Win! ##</li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+
+	<!-- scripts -->
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="script.js"></script>

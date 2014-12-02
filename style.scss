@@ -1,0 +1,26 @@
+#previous-answers li {
+	list-style: none;
+	padding-left: 0px;
+	float: left;
+	&.warm {
+		background-color: fuchsia;
+	}
+	&.cold {
+		background-color: aqua;
+	}
+	&.win {
+		background-color: lime;
+	}
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.col-center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
