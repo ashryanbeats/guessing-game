@@ -1,33 +1,38 @@
-#previous-answers li {
-	list-style: none;
-	padding-left: 0px;
-	float: left;
-	font-family: 'Lobster', cursive;	
-	font-size: 30px;
-	&.warm {
-		background-color: fuchsia;
-	}
-	&.cold {
-		background-color: aqua;
-	}
-	&.win {
-		background-color: lime;
+$cursive-font: 'Lobster', cursive;
+$margin-bottom: 25px;
+
+#game-title {
+	margin-bottom: $margin-bottom;
+	& h1 {
+		font-family: $cursive-font;
+		font-size: 90px;
 	}
 }
 
-.center {
-	margin-left: auto;
-	margin-right: auto;
+#submit-area {
+	margin-bottom: $margin-bottom;
 }
 
-.col-center-block {
-    float: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+#previous-answers {
+	margin-bottom: $margin-bottom;
+	& li {
+		list-style: none;
+		padding-left: 0px;
+		float: left;
+		font-family: $cursive-font;	
+		font-size: 30px;
+		&.warm {
+			background-color: fuchsia;
+		}
+		&.cold {
+			background-color: aqua;
+		}
+		&.win {
+			background-color: lime;
+		}
+	}
 }
 
-#game-title h1 {
-	font-family: 'Lobster', cursive;
-	font-size: 90px;
+#escape-buttons {
+	margin-bottom: $margin-bottom;
 }

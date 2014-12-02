@@ -1,26 +1,26 @@
-#previous-answers li {
-  list-style: none;
-  padding-left: 0px;
-  float: left;
-  font-family: 'Lobster', cursive;
-  font-size: 30px; }
-  #previous-answers li.warm {
-    background-color: fuchsia; }
-  #previous-answers li.cold {
-    background-color: aqua; }
-  #previous-answers li.win {
-    background-color: lime; }
+#game-title {
+  margin-bottom: 25px; }
+  #game-title h1 {
+    font-family: 'Lobster', cursive;
+    font-size: 90px; }
 
-.center {
-  margin-left: auto;
-  margin-right: auto; }
+#submit-area {
+  margin-bottom: 25px; }
 
-.col-center-block {
-  float: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto; }
+#previous-answers {
+  margin-bottom: 25px; }
+  #previous-answers li {
+    list-style: none;
+    padding-left: 0px;
+    float: left;
+    font-family: 'Lobster', cursive;
+    font-size: 30px; }
+    #previous-answers li.warm {
+      background-color: fuchsia; }
+    #previous-answers li.cold {
+      background-color: aqua; }
+    #previous-answers li.win {
+      background-color: lime; }
 
-#game-title h1 {
-  font-family: 'Lobster', cursive;
-  font-size: 90px; }
+#escape-buttons {
+  margin-bottom: 25px; }
