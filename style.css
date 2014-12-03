@@ -7,19 +7,19 @@
 #submit-area {
   margin-bottom: 25px; }
 
-#previous-answers {
+#guesses {
   margin-bottom: 25px; }
-  #previous-answers li {
+  #guesses li {
     list-style: none;
     padding-left: 0px;
     float: left;
     font-family: 'Lobster', cursive;
     font-size: 30px; }
-    #previous-answers li.warm {
+    #guesses li.warm {
       background-color: fuchsia; }
-    #previous-answers li.cold {
+    #guesses li.cold {
       background-color: aqua; }
-    #previous-answers li.win {
+    #guesses li.win {
       background-color: lime; }
 
 #escape-buttons {
