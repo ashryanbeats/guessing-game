@@ -14,13 +14,24 @@
     padding-left: 0px;
     float: left;
     font-family: 'Lobster', cursive;
-    font-size: 30px; }
+    font-size: 30px;
+    text-align: center;
+    border: solid black;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    box-shadow: 0 8px 6px -6px black; }
+    #guesses li.guess {
+      color: gray; }
     #guesses li.warm {
-      background-color: fuchsia; }
+      background-color: fuchsia;
+      color: white; }
     #guesses li.cold {
-      background-color: aqua; }
+      background-color: aqua;
+      color: white; }
     #guesses li.win {
-      background-color: lime; }
+      background-color: lime;
+      color: white; }
 
 #escape-buttons {
   margin-bottom: 25px; }

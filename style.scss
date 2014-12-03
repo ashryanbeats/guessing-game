@@ -1,5 +1,9 @@
 $cursive-font: 'Lobster', cursive;
 $margin-bottom: 25px;
+$guess-miss: white;
+$guess-win: white;
+$guess-default: gray;
+$shadow: 0 8px 6px -6px black;
 
 #game-title {
 	margin-bottom: $margin-bottom;
@@ -21,14 +25,26 @@ $margin-bottom: 25px;
 		float: left;
 		font-family: $cursive-font;	
 		font-size: 30px;
+		text-align: center;
+		border: solid black;
+		width: 150px;
+		height: 150px;
+		margin: 5px;
+		box-shadow: $shadow;
+		&.guess {
+			color: $guess-default;
+		}
 		&.warm {
 			background-color: fuchsia;
+			color: $guess-miss;
 		}
 		&.cold {
 			background-color: aqua;
+			color: $guess-miss;
 		}
 		&.win {
 			background-color: lime;
+			color: $guess-win;
 		}
 	}
 }
