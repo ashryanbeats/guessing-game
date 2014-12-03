@@ -10,7 +10,6 @@
 #guesses {
   margin-bottom: 25px; }
   #guesses div div {
-    float: left;
     display: inline-block;
     font-family: 'Lobster', cursive;
     font-size: 30px;
