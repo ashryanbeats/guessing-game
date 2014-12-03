@@ -22,20 +22,20 @@
     box-shadow: 0 8px 6px -6px black;
     position: relative; }
     #guesses li.guess {
-      color: gray; }
+      color: gray;
+      padding-top: 50px; }
     #guesses li.warm {
       background-color: fuchsia;
-      color: white; }
+      color: white;
+      padding-top: 25px; }
     #guesses li.cold {
       background-color: aqua;
-      color: white; }
+      color: white;
+      padding-top: 25px; }
     #guesses li.win {
       background-color: lime;
-      color: white; }
-    #guesses li div {
-      position: absolute;
-      top: 15%;
-      left: 14%; }
+      color: white;
+      padding-top: 25px; }
 
 #escape-buttons {
   margin-bottom: 25px; }
