@@ -22,10 +22,9 @@ $guess-padding-status: 25px;
 
 #guesses {
 	margin-bottom: $margin-bottom;
-	& li {
-		list-style: none;
-		padding-left: 0px;
+	& div div {
 		float: left;
+		display: inline-block;
 		font-family: $cursive-font;	
 		font-size: 30px;
 		border: solid black;
