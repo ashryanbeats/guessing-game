@@ -15,12 +15,12 @@
     float: left;
     font-family: 'Lobster', cursive;
     font-size: 30px;
-    text-align: center;
     border: solid black;
     width: 150px;
     height: 150px;
     margin: 5px;
-    box-shadow: 0 8px 6px -6px black; }
+    box-shadow: 0 8px 6px -6px black;
+    position: relative; }
     #guesses li.guess {
       color: gray; }
     #guesses li.warm {
@@ -32,6 +32,10 @@
     #guesses li.win {
       background-color: lime;
       color: white; }
+    #guesses li div {
+      position: absolute;
+      top: 15%;
+      left: 14%; }
 
 #escape-buttons {
   margin-bottom: 25px; }

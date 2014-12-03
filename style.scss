@@ -19,18 +19,20 @@ $shadow: 0 8px 6px -6px black;
 
 #guesses {
 	margin-bottom: $margin-bottom;
+	& ul {
+	}
 	& li {
 		list-style: none;
 		padding-left: 0px;
 		float: left;
 		font-family: $cursive-font;	
 		font-size: 30px;
-		text-align: center;
 		border: solid black;
 		width: 150px;
 		height: 150px;
 		margin: 5px;
 		box-shadow: $shadow;
+		position: relative;
 		&.guess {
 			color: $guess-default;
 		}
@@ -45,6 +47,11 @@ $shadow: 0 8px 6px -6px black;
 		&.win {
 			background-color: lime;
 			color: $guess-win;
+		}
+		& div {
+			position: absolute;
+			top: 15%;
+			left: 14%;
 		}
 	}
 }
