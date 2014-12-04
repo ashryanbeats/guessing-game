@@ -142,4 +142,10 @@ body {
 	background-color: $blue;
 	border-color: $blue;
 	color: $white;
+	&:hover {
+		color: $white;
+	}
+	&:active {
+		color: $gray;
+	}
 }

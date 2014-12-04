@@ -101,3 +101,7 @@ body {
   background-color: #00ADBC;
   border-color: #00ADBC;
   color: #FFFFFF; }
+  .btn-default:hover {
+    color: #FFFFFF; }
+  .btn-default:active {
+    color: #555555; }
