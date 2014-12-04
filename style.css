@@ -3,6 +3,9 @@
   #game-title h1 {
     font-family: 'Lobster', cursive;
     font-size: 90px; }
+    @media screen and (max-width: 565px) {
+      #game-title h1 {
+        font-size: 60px; } }
 
 #submit-area {
   margin-bottom: 25px; }
@@ -13,6 +16,10 @@
   padding: 25px 0;
   width: 400px;
   color: red; }
+  @media screen and (max-width: 565px) {
+    #guess-input {
+      font-size: 26px;
+      width: 300px; } }
 
 #guesses {
   margin-bottom: 25px; }

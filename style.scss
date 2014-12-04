@@ -10,6 +10,7 @@ $guess-padding-status: 25px;
 $guess-padding-default-small: 35px;
 $guess-padding-status-small: 17px;
 $break-small: 685px;
+$break-smaller: 565px;
 
 
 #game-title {
@@ -17,6 +18,9 @@ $break-small: 685px;
 	& h1 {
 		font-family: $cursive-font;
 		font-size: 90px;
+		@media screen and (max-width: $break-smaller) {
+			font-size: 60px;
+		}
 	}
 }
 
@@ -29,6 +33,11 @@ $break-small: 685px;
 	padding: 25px 0;
 	width: 400px;
 	color: red;
+	@media screen and (max-width: $break-smaller) {
+		font-size: 26px;
+		width: 300px;
+	}
+	
 }
 
 #guesses {
