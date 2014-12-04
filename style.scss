@@ -69,6 +69,7 @@ body {
 	padding: 25px 0;
 	width: 400px;
 	color: $red;
+	background-image: url('../guessing-game/images/question-mark-background.png');
 	@media screen and (max-width: $break-smaller) {
 		font-size: 26px;
 		width: 300px;
