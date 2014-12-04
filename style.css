@@ -9,7 +9,7 @@
 
 #guesses {
   margin-bottom: 25px; }
-  #guesses div div div {
+  #guesses div div div div {
     display: inline-block;
     font-family: 'Lobster', cursive;
     font-size: 30px;
@@ -19,21 +19,38 @@
     margin: 5px;
     box-shadow: 0 8px 6px -6px black;
     position: relative; }
-    #guesses div div div.guess {
+    @media screen and (max-width: 685px) {
+      #guesses div div div div {
+        width: 100px;
+        height: 100px;
+        font-size: 20px; } }
+    #guesses div div div div.guess {
       color: gray;
       padding-top: 50px; }
-    #guesses div div div.warm {
+      @media screen and (max-width: 685px) {
+        #guesses div div div div.guess {
+          padding-top: 35px; } }
+    #guesses div div div div.warm {
       background-color: fuchsia;
       color: white;
       padding-top: 25px; }
-    #guesses div div div.cold {
+      @media screen and (max-width: 685px) {
+        #guesses div div div div.warm {
+          padding-top: 17px; } }
+    #guesses div div div div.cold {
       background-color: aqua;
       color: white;
       padding-top: 25px; }
-    #guesses div div div.win {
+      @media screen and (max-width: 685px) {
+        #guesses div div div div.cold {
+          padding-top: 17px; } }
+    #guesses div div div div.win {
       background-color: lime;
       color: white;
       padding-top: 25px; }
+      @media screen and (max-width: 685px) {
+        #guesses div div div div.win {
+          padding-top: 17px; } }
 
 #escape-buttons {
   margin-bottom: 25px; }

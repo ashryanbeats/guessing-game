@@ -6,6 +6,9 @@ $guess-color-default: gray;
 $shadow: 0 8px 6px -6px black;
 $guess-padding-default: 50px;
 $guess-padding-status: 25px;
+$guess-padding-default-small: 35px;
+$guess-padding-status-small: 17px;
+$break-small: 685px;
 
 
 #game-title {
@@ -22,7 +25,7 @@ $guess-padding-status: 25px;
 
 #guesses {
 	margin-bottom: $margin-bottom;
-	& div div div {
+	& div div div div {
 		display: inline-block;
 		font-family: $cursive-font;	
 		font-size: 30px;
@@ -32,24 +35,41 @@ $guess-padding-status: 25px;
 		margin: 5px;
 		box-shadow: $shadow;
 		position: relative;
+		@media screen and (max-width: $break-small) {
+			width: 100px;
+			height: 100px;
+			font-size: 20px;
+		}
 		&.guess {
 			color: $guess-color-default;
 			padding-top: $guess-padding-default;
+			@media screen and (max-width: $break-small) {
+				padding-top: $guess-padding-default-small;
+			}
 		}
 		&.warm {
 			background-color: fuchsia;
 			color: $guess-color-miss;
 			padding-top: $guess-padding-status;
+			@media screen and (max-width: $break-small) {
+				padding-top: $guess-padding-status-small;
+			}
 		}
 		&.cold {
 			background-color: aqua;
 			color: $guess-color-miss;
 			padding-top: $guess-padding-status;
+			@media screen and (max-width: $break-small) {
+				padding-top: $guess-padding-status-small;
+			}
 		}
 		&.win {
 			background-color: lime;
 			color: $guess-color-win;
 			padding-top: $guess-padding-status;
+			@media screen and (max-width: $break-small) {
+				padding-top: $guess-padding-status-small;
+			}
 		}
 	}
 }
