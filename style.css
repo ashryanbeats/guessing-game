@@ -13,6 +13,10 @@ body {
   text-shadow: 0px 2px 3px #555555;
   color: #FFFFFF;
   overflow: visible; }
+  @media screen and (max-width: 485px) {
+    #game-title {
+      height: 50px;
+      margin-bottom: 10px; } }
   #game-title h1 {
     -webkit-transform: translateY(40px);
     font-family: 'Lobster', cursive;
@@ -29,7 +33,7 @@ body {
     @media screen and (max-width: 485px) {
       #game-title h1 {
         font-size: 45px;
-        -webkit-transform: translateY(25px); } }
+        -webkit-transform: translateY(-14px); } }
 
 #submit-area {
   margin-bottom: 25px; }
@@ -48,7 +52,9 @@ body {
   @media screen and (max-width: 485px) {
     #guess-input {
       font-size: 26px;
-      width: 250px; } }
+      width: 250px;
+      padding: 5px 0;
+      margin-bottom: 0; } }
 
 #guesses {
   margin-bottom: 25px; }

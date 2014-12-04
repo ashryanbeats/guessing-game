@@ -47,6 +47,10 @@ body {
 	text-shadow: $text-shadow-dark;
 	color: $white;
 	overflow: visible;
+	@media screen and (max-width: $break-smallest) {
+		height: 50px;
+		margin-bottom: ($margin-bottom-section - 15);
+	}
 	& h1 {
 		-webkit-transform: translateY($margin-bottom-small + 30);
 		font-family: $cursive-font;
@@ -62,7 +66,7 @@ body {
 		}
 		@media screen and (max-width: $break-smallest) {
 			font-size: 45px;
-			-webkit-transform: translateY($margin-bottom-small + 15);
+			-webkit-transform: translateY(-14px);
 		}
 	}
 }
@@ -84,6 +88,8 @@ body {
 	@media screen and (max-width: $break-smallest) {
 		font-size: 26px;
 		width: 250px;
+		padding: 5px 0;
+		margin-bottom: 0;
 	}
 }
 
