@@ -1,5 +1,6 @@
 $cursive-font: 'Lobster', cursive;
-$margin-bottom: 25px;
+$margin-bottom-section: 25px;
+$margin-bottom-small: 10px;
 $guess-color-miss: white;
 $guess-color-win: white;
 $guess-color-default: gray;
@@ -12,7 +13,7 @@ $break-small: 685px;
 
 
 #game-title {
-	margin-bottom: $margin-bottom;
+	margin-bottom: $margin-bottom-section;
 	& h1 {
 		font-family: $cursive-font;
 		font-size: 90px;
@@ -20,11 +21,14 @@ $break-small: 685px;
 }
 
 #submit-area {
-	margin-bottom: $margin-bottom;
+	margin-bottom: $margin-bottom-section;
+}
+#guess-input {
+	margin-bottom: $margin-bottom-small;
 }
 
 #guesses {
-	margin-bottom: $margin-bottom;
+	margin-bottom: $margin-bottom-section;
 	& div div div div {
 		display: inline-block;
 		font-family: $cursive-font;	
@@ -75,5 +79,5 @@ $break-small: 685px;
 }
 
 #escape-buttons {
-	margin-bottom: $margin-bottom;
+	margin-bottom: $margin-bottom-section;
 }
