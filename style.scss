@@ -6,8 +6,11 @@ $guess-padding-default: 50px;
 $guess-padding-status: 25px;
 $guess-padding-default-small: 35px;
 $guess-padding-status-small: 17px;
+$guess-padding-default-smallest: 20px;
+$guess-padding-status-smallest: 5px;
 $break-small: 685px;
 $break-smaller: 565px;
+$break-smallest: 485px;
 
 //background colors
 $orange: #E79822;
@@ -57,6 +60,10 @@ body {
 			font-size: 60px;
 			-webkit-transform: translateY($margin-bottom-small + 18);
 		}
+		@media screen and (max-width: $break-smallest) {
+			font-size: 50px;
+			-webkit-transform: translateY($margin-bottom-small + 18);
+		}
 	}
 }
 
@@ -94,6 +101,11 @@ body {
 			height: 100px;
 			font-size: 20px;
 		}
+		@media screen and (max-width: $break-smallest) {
+			width: 65px;
+			height: 65px;
+			font-size: 16px;
+		}
 		&.guess {
 			color: $gray;
 			text-shadow: $text-shadow-light;
@@ -102,6 +114,9 @@ body {
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-default-small;
 			}
+			@media screen and (max-width: $break-smallest) {
+				padding-top: $guess-padding-default-smallest;
+			}			
 		}
 		&.warm {
 			background-color: $red;
@@ -111,6 +126,9 @@ body {
 			background-image: none;
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-status-small;
+			}
+			@media screen and (max-width: $break-smallest) {
+				padding-top: $guess-padding-status-smallest;
 			}
 		}
 		&.cold {
@@ -122,6 +140,9 @@ body {
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-status-small;
 			}
+			@media screen and (max-width: $break-smallest) {
+				padding-top: $guess-padding-status-smallest;
+			}
 		}
 		&.win {
 			background-color: $green;
@@ -132,6 +153,10 @@ body {
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-status-small;
 			}
+			@media screen and (max-width: $break-smallest) {
+				padding-top: $guess-padding-status-smallest;
+			}
+
 		}
 	}
 }

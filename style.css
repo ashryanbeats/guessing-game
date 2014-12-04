@@ -26,6 +26,10 @@ body {
       #game-title h1 {
         font-size: 60px;
         -webkit-transform: translateY(28px); } }
+    @media screen and (max-width: 485px) {
+      #game-title h1 {
+        font-size: 50px;
+        -webkit-transform: translateY(28px); } }
 
 #submit-area {
   margin-bottom: 25px; }
@@ -60,6 +64,11 @@ body {
         width: 100px;
         height: 100px;
         font-size: 20px; } }
+    @media screen and (max-width: 485px) {
+      #guesses div div div div {
+        width: 65px;
+        height: 65px;
+        font-size: 16px; } }
     #guesses div div div div.guess {
       color: #555555;
       text-shadow: 0px 2px 3px #FFFFCC;
@@ -68,6 +77,9 @@ body {
       @media screen and (max-width: 685px) {
         #guesses div div div div.guess {
           padding-top: 35px; } }
+      @media screen and (max-width: 485px) {
+        #guesses div div div div.guess {
+          padding-top: 20px; } }
     #guesses div div div div.warm {
       background-color: #FF2F7C;
       text-shadow: 0px 2px 3px #555555;
@@ -77,6 +89,9 @@ body {
       @media screen and (max-width: 685px) {
         #guesses div div div div.warm {
           padding-top: 17px; } }
+      @media screen and (max-width: 485px) {
+        #guesses div div div div.warm {
+          padding-top: 5px; } }
     #guesses div div div div.cold {
       background-color: #00ADBC;
       text-shadow: 0px 2px 3px #555555;
@@ -86,6 +101,9 @@ body {
       @media screen and (max-width: 685px) {
         #guesses div div div div.cold {
           padding-top: 17px; } }
+      @media screen and (max-width: 485px) {
+        #guesses div div div div.cold {
+          padding-top: 5px; } }
     #guesses div div div div.win {
       background-color: #A6F600;
       text-shadow: 0px 2px 3px #555555;
@@ -95,6 +113,9 @@ body {
       @media screen and (max-width: 685px) {
         #guesses div div div div.win {
           padding-top: 17px; } }
+      @media screen and (max-width: 485px) {
+        #guesses div div div div.win {
+          padding-top: 5px; } }
 
 #escape-buttons {
   margin-bottom: 25px; }
