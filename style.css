@@ -8,7 +8,11 @@
   margin-bottom: 25px; }
 
 #guess-input {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  font-size: 44px;
+  padding: 25px 0;
+  width: 400px;
+  color: red; }
 
 #guesses {
   margin-bottom: 25px; }

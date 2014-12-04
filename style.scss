@@ -25,6 +25,10 @@ $break-small: 685px;
 }
 #guess-input {
 	margin-bottom: $margin-bottom-small;
+	font-size: 44px;
+	padding: 25px 0;
+	width: 400px;
+	color: red;
 }
 
 #guesses {
