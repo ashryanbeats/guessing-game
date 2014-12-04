@@ -11,11 +11,13 @@ body {
   margin-bottom: 25px;
   background-color: #9639AD;
   text-shadow: 0px 2px 3px #555555;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  overflow: visible; }
   #game-title h1 {
     -webkit-transform: translateY(40px);
     font-family: 'Lobster', cursive;
-    font-size: 140px; }
+    font-size: 140px;
+    z-index: 100; }
     @media screen and (max-width: 860px) {
       #game-title h1 {
         font-size: 90px;

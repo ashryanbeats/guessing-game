@@ -43,10 +43,12 @@ body {
 	background-color: $purple;
 	text-shadow: $text-shadow-dark;
 	color: $white;
+	overflow: visible;
 	& h1 {
 		-webkit-transform: translateY($margin-bottom-small + 30);
 		font-family: $cursive-font;
 		font-size: 140px;
+		z-index: 100; //Keeps the tail of the lower case G over the input
 		@media screen and (max-width: 860px) {
 			font-size: 90px;
 			-webkit-transform: translateY($margin-bottom-small + 22);
