@@ -97,6 +97,7 @@ body {
 			color: $gray;
 			text-shadow: $text-shadow-light;
 			padding-top: $guess-padding-default;
+			background-image: url('../guessing-game/images/question-mark-background.png');
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-default-small;
 			}
@@ -106,6 +107,7 @@ body {
 			text-shadow: $text-shadow-dark;
 			color: $white;
 			padding-top: $guess-padding-status;
+			background-image: none;
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-status-small;
 			}
@@ -115,6 +117,7 @@ body {
 			text-shadow: $text-shadow-dark;
 			color: $white;
 			padding-top: $guess-padding-status;
+			background-image: none;
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-status-small;
 			}
@@ -124,6 +127,7 @@ body {
 			text-shadow: $text-shadow-dark;
 			color: $white;
 			padding-top: $guess-padding-status;
+			background-image: none;
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-status-small;
 			}
