@@ -73,7 +73,8 @@ body {
         width: 65px;
         height: 65px;
         font-size: 16px;
-        margin: 5px 1px; } }
+        margin: 5px 1px;
+        border: solid black 1px; } }
     #guesses div div div div.guess {
       color: #555555;
       text-shadow: 0px 2px 3px #FFFFCC;
