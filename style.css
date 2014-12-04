@@ -85,3 +85,19 @@ body {
 
 #escape-buttons {
   margin-bottom: 25px; }
+
+.btn-danger {
+  background-image: linear-gradient(#ff43b1, #FF2F7C);
+  background-color: #FF2F7C;
+  border-color: #FF2F7C; }
+
+.btn-warning {
+  background-image: linear-gradient(#ffcb2d, #E79822);
+  background-color: #E79822;
+  border-color: #E79822; }
+
+.btn-default {
+  background-image: linear-gradient(#00e7fb, #00ADBC);
+  background-color: #00ADBC;
+  border-color: #00ADBC;
+  color: #FFFFFF; }

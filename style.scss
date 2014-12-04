@@ -10,7 +10,7 @@ $break-small: 685px;
 $break-smaller: 565px;
 
 //background colors
-$yellow: #FFDE12;
+$orange: #E79822;
 $red: #FF2F7C;
 $green: #A6F600;
 $blue: #00ADBC;
@@ -125,4 +125,21 @@ body {
 
 #escape-buttons {
 	margin-bottom: $margin-bottom-section;
+}
+
+.btn-danger {
+	background-image: linear-gradient(($red / .70), $red);
+	background-color: $red;
+	border-color: $red;
+}
+.btn-warning {
+	background-image: linear-gradient(($orange / .75), $orange);
+	background-color: $orange;
+	border-color: $orange;
+}
+.btn-default {
+	background-image: linear-gradient(($blue / .75), $blue);
+	background-color: $blue;
+	border-color: $blue;
+	color: $white;
 }
