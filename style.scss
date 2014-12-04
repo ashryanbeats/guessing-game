@@ -44,10 +44,16 @@ body {
 	text-shadow: $text-shadow-dark;
 	color: $white;
 	& h1 {
+		-webkit-transform: translateY($margin-bottom-small + 30);
 		font-family: $cursive-font;
-		font-size: 90px;
+		font-size: 140px;
+		@media screen and (max-width: 860px) {
+			font-size: 90px;
+			-webkit-transform: translateY($margin-bottom-small + 22);
+		}
 		@media screen and (max-width: $break-smaller) {
 			font-size: 60px;
+			-webkit-transform: translateY($margin-bottom-small + 18);
 		}
 	}
 }
@@ -148,4 +154,8 @@ body {
 	&:active {
 		color: $gray;
 	}
+}
+
+footer {
+	margin: 50px 0;
 }
