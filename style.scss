@@ -17,19 +17,32 @@ $blue: #00ADBC;
 $purple: #9639AD;
 $white: #FFFFFF;
 $cream: #FFFFCC;
+$gray: #555555;
 
 //text colors
-$guess-color-miss: white;
-$guess-color-win: white;
-$guess-color-default: gray;
+$guess-color-miss: $white;
+$guess-color-win: $white;
+$guess-color-default: $gray;
+
+$text-shadow-dark: 0px 2px 3px $gray;
+$text-shadow-light: 0px 2px 3px $cream; 
 
 body {
 	background-color: $cream;
 }
 
+.container {
+	width: 100%;
+	margin-left: 0;
+	margin-right: 0;
+}
+
 #game-title {
+	padding-bottom: $margin-bottom-small;
 	margin-bottom: $margin-bottom-section;
 	background-color: $purple;
+	text-shadow: $text-shadow-dark;
+	color: $white;
 	& h1 {
 		font-family: $cursive-font;
 		font-size: 90px;
@@ -47,12 +60,11 @@ body {
 	font-size: 44px;
 	padding: 25px 0;
 	width: 400px;
-	color: red;
+	color: $red;
 	@media screen and (max-width: $break-smaller) {
 		font-size: 26px;
 		width: 300px;
 	}
-	
 }
 
 #guesses {
@@ -74,7 +86,8 @@ body {
 			font-size: 20px;
 		}
 		&.guess {
-			color: $guess-color-default;
+			color: $gray;
+			text-shadow: $text-shadow-light;
 			padding-top: $guess-padding-default;
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-default-small;
@@ -82,7 +95,8 @@ body {
 		}
 		&.warm {
 			background-color: $red;
-			color: $guess-color-miss;
+			text-shadow: $text-shadow-dark;
+			color: $white;
 			padding-top: $guess-padding-status;
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-status-small;
@@ -90,7 +104,8 @@ body {
 		}
 		&.cold {
 			background-color: $blue;
-			color: $guess-color-miss;
+			text-shadow: $text-shadow-dark;
+			color: $white;
 			padding-top: $guess-padding-status;
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-status-small;
@@ -98,7 +113,8 @@ body {
 		}
 		&.win {
 			background-color: $green;
-			color: $guess-color-win;
+			text-shadow: $text-shadow-dark;
+			color: $white;
 			padding-top: $guess-padding-status;
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-status-small;
