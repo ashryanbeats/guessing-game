@@ -28,8 +28,8 @@ body {
         -webkit-transform: translateY(28px); } }
     @media screen and (max-width: 485px) {
       #game-title h1 {
-        font-size: 50px;
-        -webkit-transform: translateY(28px); } }
+        font-size: 45px;
+        -webkit-transform: translateY(25px); } }
 
 #submit-area {
   margin-bottom: 25px; }
@@ -45,6 +45,10 @@ body {
     #guess-input {
       font-size: 26px;
       width: 300px; } }
+  @media screen and (max-width: 485px) {
+    #guess-input {
+      font-size: 26px;
+      width: 250px; } }
 
 #guesses {
   margin-bottom: 25px; }
@@ -68,7 +72,8 @@ body {
       #guesses div div div div {
         width: 65px;
         height: 65px;
-        font-size: 16px; } }
+        font-size: 16px;
+        margin: 5px 1px; } }
     #guesses div div div div.guess {
       color: #555555;
       text-shadow: 0px 2px 3px #FFFFCC;

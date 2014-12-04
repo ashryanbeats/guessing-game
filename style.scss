@@ -61,8 +61,8 @@ body {
 			-webkit-transform: translateY($margin-bottom-small + 18);
 		}
 		@media screen and (max-width: $break-smallest) {
-			font-size: 50px;
-			-webkit-transform: translateY($margin-bottom-small + 18);
+			font-size: 45px;
+			-webkit-transform: translateY($margin-bottom-small + 15);
 		}
 	}
 }
@@ -80,6 +80,10 @@ body {
 	@media screen and (max-width: $break-smaller) {
 		font-size: 26px;
 		width: 300px;
+	}
+	@media screen and (max-width: $break-smallest) {
+		font-size: 26px;
+		width: 250px;
 	}
 }
 
@@ -105,6 +109,7 @@ body {
 			width: 65px;
 			height: 65px;
 			font-size: 16px;
+			margin: 5px 1px;
 		}
 		&.guess {
 			color: $gray;
