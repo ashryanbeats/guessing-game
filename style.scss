@@ -1,9 +1,6 @@
 $cursive-font: 'Lobster', cursive;
 $margin-bottom-section: 25px;
 $margin-bottom-small: 10px;
-$guess-color-miss: white;
-$guess-color-win: white;
-$guess-color-default: gray;
 $shadow: 0 8px 6px -6px black;
 $guess-padding-default: 50px;
 $guess-padding-status: 25px;
@@ -12,9 +9,27 @@ $guess-padding-status-small: 17px;
 $break-small: 685px;
 $break-smaller: 565px;
 
+//background colors
+$yellow: #FFDE12;
+$red: #FF2F7C;
+$green: #A6F600;
+$blue: #00ADBC;
+$purple: #9639AD;
+$white: #FFFFFF;
+$cream: #FFFFCC;
+
+//text colors
+$guess-color-miss: white;
+$guess-color-win: white;
+$guess-color-default: gray;
+
+body {
+	background-color: $cream;
+}
 
 #game-title {
 	margin-bottom: $margin-bottom-section;
+	background-color: $purple;
 	& h1 {
 		font-family: $cursive-font;
 		font-size: 90px;
@@ -43,6 +58,7 @@ $break-smaller: 565px;
 #guesses {
 	margin-bottom: $margin-bottom-section;
 	& div div div div {
+		background-color: $white;
 		display: inline-block;
 		font-family: $cursive-font;	
 		font-size: 30px;
@@ -65,7 +81,7 @@ $break-smaller: 565px;
 			}
 		}
 		&.warm {
-			background-color: fuchsia;
+			background-color: $red;
 			color: $guess-color-miss;
 			padding-top: $guess-padding-status;
 			@media screen and (max-width: $break-small) {
@@ -73,7 +89,7 @@ $break-smaller: 565px;
 			}
 		}
 		&.cold {
-			background-color: aqua;
+			background-color: $blue;
 			color: $guess-color-miss;
 			padding-top: $guess-padding-status;
 			@media screen and (max-width: $break-small) {
@@ -81,7 +97,7 @@ $break-smaller: 565px;
 			}
 		}
 		&.win {
-			background-color: lime;
+			background-color: $green;
 			color: $guess-color-win;
 			padding-top: $guess-padding-status;
 			@media screen and (max-width: $break-small) {

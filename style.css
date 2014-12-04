@@ -1,5 +1,9 @@
+body {
+  background-color: #FFFFCC; }
+
 #game-title {
-  margin-bottom: 25px; }
+  margin-bottom: 25px;
+  background-color: #9639AD; }
   #game-title h1 {
     font-family: 'Lobster', cursive;
     font-size: 90px; }
@@ -24,6 +28,7 @@
 #guesses {
   margin-bottom: 25px; }
   #guesses div div div div {
+    background-color: #FFFFFF;
     display: inline-block;
     font-family: 'Lobster', cursive;
     font-size: 30px;
@@ -45,21 +50,21 @@
         #guesses div div div div.guess {
           padding-top: 35px; } }
     #guesses div div div div.warm {
-      background-color: fuchsia;
+      background-color: #FF2F7C;
       color: white;
       padding-top: 25px; }
       @media screen and (max-width: 685px) {
         #guesses div div div div.warm {
           padding-top: 17px; } }
     #guesses div div div div.cold {
-      background-color: aqua;
+      background-color: #00ADBC;
       color: white;
       padding-top: 25px; }
       @media screen and (max-width: 685px) {
         #guesses div div div div.cold {
           padding-top: 17px; } }
     #guesses div div div div.win {
-      background-color: lime;
+      background-color: #A6F600;
       color: white;
       padding-top: 25px; }
       @media screen and (max-width: 685px) {
