@@ -14,10 +14,12 @@ var penultDiff = 0;
 $("#guess-submit").click(function() {
 	// Getting the input
 	if (isNaN($("#guess-input").val())) { // if not a number
+		// DEBUG
 		$("#warning").text("Numbers please!");
 		$("#guess-input").val(""); // reset the input field
 	}
-	else if ($("#guess-input").val() < 1 || $("#guess-input").val() > 100) {
+	else if ($("#guess-input").val() < 1 || $("#guess-input").val() > 100) { // if out of range
+		// DEBUG
 		$("#warning").text("Between 1 and 100 please!!");
 		$("#guess-input").val(""); // reset the input field
 	}
@@ -64,4 +66,23 @@ $("#guess-submit").click(function() {
 			$("#winLose").text("Colder");
 		}
 	}
+});
+
+$("#restart").click(function() {
+	answer = Math.floor(Math.random()*100 + 1);
+	userAnswer = [];
+	guessLimit = 8;
+	userAnswerUlt = 0;
+	userAnswerPenult = 0;
+	ultDiff = 0;
+	penultDiff = 0;
+	
+	$("#guess-input").val(""); // reset the input field
+	
+	// DEBUG
+	$("#answer").text(answer);
+	$("#userAnswerLast").text("Last: " + userAnswerUlt);	
+	$("#userAnswer").text(userAnswer);
+	$("#winLose").text("Restarted");
+	$("#warning").text(""); // reset warnings
 });
