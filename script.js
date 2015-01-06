@@ -86,3 +86,8 @@ $("#restart").click(function() {
 	$("#winLose").text("Restarted");
 	$("#warning").text(""); // reset warnings
 });
+
+$("#give-answer").click(function() {
+	$("#winLose").text("Lose");
+	$("#userAnswer").text(answer);
+});
