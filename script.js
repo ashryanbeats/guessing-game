@@ -43,36 +43,40 @@ $("#guess-submit").click(function() {
 		
 		// Temperature and Win
 		if (userAnswer.length === 1) {
-			if (ultDiff < 25) {
+			if (userAnswer[0] === answer) {
+				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
+			}
+			else if (ultDiff < 25) {
 				$("#winLose").text("Warm");
 				
 				//##<br/>is Warm
-				$("#" + (guessLimit + 1)).addClass("warm").html("##" + "<br/>" + "is Warm");
+				$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Warm");
 			}
 			else {
 				$("#winLose").text("Cold");
 				//##<br/>is Cold
-				$("#" + (guessLimit + 1)).addClass("cold").html("##" + "<br/>" + "is Cold");
+				$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Cold");
 			}
 		}
 		else if (userAnswerUlt === answer) {
 			$("#winLose").text("Win");
 			//##<br/>is Win!
-			$("#" + (guessLimit + 1)).addClass("win").html("##" + "<br/>" + "is Win!");
+			$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 		}
 		else if (ultDiff < penultDiff) {
 			$("#winLose").text("Warmer");
 			//##<br/>is Warmer
-			$("#" + (guessLimit + 1)).addClass("warm").html("##" + "<br/>" + "is Warmer");
+			$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Warmer");
 		}
 		else if (ultDiff === penultDiff) {
 			$("#winLose").text("Same");
 			//##<br/>is Same
+			$("#" + (guessLimit + 1)).removeClass("guess").html(userAnswerUlt + "<br/>" + "is Same");
 		}
 		else {
 			$("#winLose").text("Colder");
 			//##<br/>is Colder
-			$("#" + (guessLimit + 1)).addClass("cold").html("##" + "<br/>" + "is Colder");
+			$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Colder");
 		}
 	}
 	if (userAnswer.length === 8) {
@@ -96,7 +100,7 @@ $("#restart").click(function() {
 	// reset cards
 	var cardNumber = 1;
 	for (var i = guessLimit; i > 0; i--) {
-		$("#" + i).removeClass("warm cold win").html("Guess " + cardNumber);
+		$("#" + i).removeClass("warm cold win").addClass("guess").html("Guess" + "<br/>" + "#" + cardNumber);
 		cardNumber++;
 	}
 	

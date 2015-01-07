@@ -2,11 +2,11 @@ $cursive-font: 'Lobster', cursive;
 $margin-bottom-section: 25px;
 $margin-bottom-small: 10px;
 $shadow: 0 8px 6px -6px black;
-$guess-padding-default: 50px;
+$guess-padding-default: 25px;
 $guess-padding-status: 25px;
-$guess-padding-default-small: 35px;
+$guess-padding-default-small: 17px;
 $guess-padding-status-small: 17px;
-$guess-padding-default-smallest: 22px;
+$guess-padding-default-smallest: 9px;
 $guess-padding-status-smallest: 9px;
 $break-small: 685px;
 $break-smaller: 565px;
@@ -105,7 +105,7 @@ body {
 		height: 150px;
 		margin: 5px;
 		box-shadow: $shadow;
-		position: relative;
+		/*position: relative;*/
 		@media screen and (max-width: $break-small) {
 			width: 100px;
 			height: 100px;
@@ -202,4 +202,9 @@ body {
 
 footer {
 	margin: 50px 0;
+}
+
+.debug {
+	visibility: hidden;
+	position: absolute;
 }
