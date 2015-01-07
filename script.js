@@ -100,7 +100,7 @@ $("#restart").click(function() {
 	// reset cards
 	var cardNumber = 1;
 	for (var i = guessLimit; i > 0; i--) {
-		$("#" + i).removeClass("warm cold win").addClass("guess").html("Guess" + "<br/>" + "#" + cardNumber);
+		$("#" + i).removeClass("warm cold win same").addClass("guess").html("Guess" + "<br/>" + "#" + cardNumber);
 		cardNumber++;
 	}
 	
