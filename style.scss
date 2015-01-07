@@ -21,6 +21,7 @@ $purple: #9639AD;
 $white: #FFFFFF;
 $cream: #FFFFCC;
 $gray: #555555;
+$light-gray: #868686;
 
 //text colors
 $guess-color-miss: $white;
@@ -156,6 +157,19 @@ body {
 				padding-top: $guess-padding-status-smallest;
 			}
 		}
+		&.same {
+			background-color: $light-gray;
+			text-shadow: $text-shadow-light;
+			color: black;
+			padding-top: $guess-padding-status;
+			background-image: none;
+			@media screen and (max-width: $break-small) {
+				padding-top: $guess-padding-status-small;
+			}
+			@media screen and (max-width: $break-smallest) {
+				padding-top: $guess-padding-status-smallest;
+			}
+		}
 		&.win {
 			background-color: $green;
 			text-shadow: $text-shadow-dark;
@@ -168,7 +182,6 @@ body {
 			@media screen and (max-width: $break-smallest) {
 				padding-top: $guess-padding-status-smallest;
 			}
-
 		}
 	}
 }

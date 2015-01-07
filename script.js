@@ -71,7 +71,7 @@ $("#guess-submit").click(function() {
 		else if (ultDiff === penultDiff) {
 			$("#winLose").text("Same");
 			//##<br/>is Same
-			$("#" + (guessLimit + 1)).removeClass("guess").html(userAnswerUlt + "<br/>" + "is Same");
+			$("#" + (guessLimit + 1)).addClass("same").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Same");
 		}
 		else {
 			$("#winLose").text("Colder");
