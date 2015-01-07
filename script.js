@@ -41,34 +41,47 @@ $("#guess-submit").click(function() {
 		$("#userAnswerLast").text("Last: " + userAnswerUlt);	
 		$("#userAnswer").text(userAnswer);
 		
-		// Winning and Losing
+		// Temperature and Win
 		if (userAnswer.length === 1) {
 			if (ultDiff < 25) {
 				$("#winLose").text("Warm");
+				
+				//##<br/>is Warm
+				$("#" + (guessLimit + 1)).addClass("warm").html("##" + "<br/>" + "is Warm");
 			}
 			else {
 				$("#winLose").text("Cold");
+				//##<br/>is Cold
+				$("#" + (guessLimit + 1)).addClass("cold").html("##" + "<br/>" + "is Cold");
 			}
-		}
-		else if (userAnswer.length === 8) {
-			$("#winLose").text("Lose");
 		}
 		else if (userAnswerUlt === answer) {
 			$("#winLose").text("Win");
+			//##<br/>is Win!
+			$("#" + (guessLimit + 1)).addClass("win").html("##" + "<br/>" + "is Win!");
 		}
 		else if (ultDiff < penultDiff) {
 			$("#winLose").text("Warmer");
+			//##<br/>is Warmer
+			$("#" + (guessLimit + 1)).addClass("warm").html("##" + "<br/>" + "is Warmer");
 		}
 		else if (ultDiff === penultDiff) {
 			$("#winLose").text("Same");
+			//##<br/>is Same
 		}
 		else {
 			$("#winLose").text("Colder");
+			//##<br/>is Colder
+			$("#" + (guessLimit + 1)).addClass("cold").html("##" + "<br/>" + "is Colder");
 		}
+	}
+	if (userAnswer.length === 8) {
+		$("#winLose").text("Lose"); 
 	}
 });
 
 $("#restart").click(function() {
+	// reset variables
 	answer = Math.floor(Math.random()*100 + 1);
 	userAnswer = [];
 	guessLimit = 8;
@@ -77,7 +90,15 @@ $("#restart").click(function() {
 	ultDiff = 0;
 	penultDiff = 0;
 	
+	// reset UI
 	$("#guess-input").val(""); // reset the input field
+	
+	// reset cards
+	var cardNumber = 1;
+	for (var i = guessLimit; i > 0; i--) {
+		$("#" + i).removeClass("warm cold win").html("Guess " + cardNumber);
+		cardNumber++;
+	}
 	
 	// DEBUG
 	$("#answer").text(answer);
