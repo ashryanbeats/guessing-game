@@ -63,9 +63,47 @@
 
 		<div class="row" id="escape-buttons">
 			<div class="col-md-12 text-center">			
-				<input id="give-answer" class="btn btn-warning" type="button" value="Just give me the answer">
-				<input id="restart" class="btn btn-danger" type="button" value="Restart">
+				<input id="give-answer" class="btn btn-warning" type="button" value="Just give me the answer" data-toggle="modal" data-target=".give-answer-modal-sm">
+				<input class="btn btn-danger" type="button" value="Restart" data-toggle="modal" data-target=".restart-modal-sm">
 			</div>		
+		</div>
+		
+		
+		<!-- #restart modal (Bootstrap) -->		
+		<div class="modal fade restart-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-sm">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Do you really want to restart?</h4>
+		      </div>
+		      <div class="modal-body">
+		        Your previous guesses will be cleared and the mystery number will be reset to a new number.
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>
+		        <input class="btn btn-danger restart" type="button" value="Restart" data-dismiss="modal">
+		      </div>
+		    </div>
+		  </div>
+		</div>		
+		
+		<!-- #give-answer modal (Bootstrap) -->		
+		<div class="modal fade give-answer-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+		  <div class="modal-dialog modal-sm">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">The answer is...</h4>
+		      </div>
+		      <div class="modal-body display-answer">
+		        Number goes here.
+		      </div>
+		      <div class="modal-footer">
+		        <input class="btn btn-danger restart" type="button" value="Restart" data-dismiss="modal">
+		      </div>
+		    </div>
+		  </div>
 		</div>		
 	</div>
 	

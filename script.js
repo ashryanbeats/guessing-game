@@ -84,7 +84,7 @@ $("#guess-submit").click(function() {
 	}
 });
 
-$("#restart").click(function() {
+$(".restart").click(function() {
 	// reset variables
 	answer = Math.floor(Math.random()*100 + 1);
 	userAnswer = [];
@@ -113,6 +113,9 @@ $("#restart").click(function() {
 });
 
 $("#give-answer").click(function() {
+	$(".display-answer").text(answer);
+	
+	//DEBUG
 	$("#winLose").text("Lose");
 	$("#userAnswer").text(answer);
 });
