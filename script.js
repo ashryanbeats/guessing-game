@@ -45,6 +45,9 @@ $("#guess-submit").click(function() {
 		if (userAnswer.length === 1) {
 			if (userAnswer[0] === answer) {
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
+				
+				$(".display-answer").text(answer);
+				$('.win-modal-sm').modal("show");
 			}
 			else if (ultDiff < 25) {
 				$("#winLose").text("Warm");
@@ -62,6 +65,9 @@ $("#guess-submit").click(function() {
 			$("#winLose").text("Win");
 			//##<br/>is Win!
 			$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
+			
+			$(".display-answer").text(answer);
+			$('.win-modal-sm').modal("show");
 		}
 		else if (ultDiff < penultDiff) {
 			$("#winLose").text("Warmer");
@@ -81,6 +87,8 @@ $("#guess-submit").click(function() {
 	}
 	if (userAnswer.length === 8) {
 		$("#winLose").text("Lose"); 
+		$(".display-answer").text(answer);
+		$('.lose-modal-sm').modal("show");
 	}
 });
 
