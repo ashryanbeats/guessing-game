@@ -16,7 +16,9 @@ var sound = new Howl({
   sprite: {
     warmSound: [0, 600],
     coldSound: [875, 750],
-    winSound: [1918, 4000]
+    winSound: [1918, 2500],
+    sameSound: [4518, 500],
+    loseSound: [6093, 1700]
   }
 });
 
@@ -91,6 +93,7 @@ $("#guess-submit").click(function() {
 		else if (ultDiff === penultDiff) {
 			$("#winLose").text("Same");
 			//##<br/>is Same
+			sound.play("sameSound");
 			$("#" + (guessLimit + 1)).addClass("same").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Same");
 		}
 		else {
@@ -102,6 +105,8 @@ $("#guess-submit").click(function() {
 	}
 	if (userAnswer.length === 8) {
 		$("#winLose").text("Lose"); 
+		
+		sound.play('loseSound');
 		$(".display-answer").text(answer);
 		$('.lose-modal-sm').modal("show");
 	}
