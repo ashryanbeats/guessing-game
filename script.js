@@ -27,6 +27,8 @@ $("#guess-submit").click(function() {
 	if (isNaN($("#guess-input").val())) { // if not a number
 		// DEBUG
 		$("#warning").text("Numbers please!");
+		
+		$("span#warning-number").css({"font-weight": "bold"});
 		$("#guess-input").val(""); // reset the input field
 	}
 	else if ($("#guess-input").val() < 1 || $("#guess-input").val() > 100) { // if out of range
