@@ -12,9 +12,11 @@ var ultDiff = 0;
 var penultDiff = 0;
 
 var sound = new Howl({
-  src: ['sounds/sound2.ogg', 'sounds/sound2.mp3'],
+  src: ['sounds/game-sounds.ogg', 'sounds/game-sounds.mp3'],
   sprite: {
-    oneVoice: [0, 2000]
+    warmSound: [0, 600],
+    coldSound: [875, 750],
+    winSound: [1918, 4000]
   }
 });
 
@@ -51,6 +53,7 @@ $("#guess-submit").click(function() {
 		// Temperature and Win
 		if (userAnswer.length === 1) {
 			if (userAnswer[0] === answer) {
+				sound.play('winSound');
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
 				$(".display-answer").text(answer);
@@ -60,17 +63,20 @@ $("#guess-submit").click(function() {
 				$("#winLose").text("Warm");
 				
 				//##<br/>is Warm
+				sound.play('warmSound');
 				$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Warm");
 			}
 			else {
 				$("#winLose").text("Cold");
 				//##<br/>is Cold
+				sound.play('coldSound');
 				$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Cold");
 			}
 		}
 		else if (userAnswerUlt === answer) {
 			$("#winLose").text("Win");
 			//##<br/>is Win!
+			sound.play('winSound');
 			$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 			
 			$(".display-answer").text(answer);
@@ -79,7 +85,7 @@ $("#guess-submit").click(function() {
 		else if (ultDiff < penultDiff) {
 			$("#winLose").text("Warmer");
 			//##<br/>is Warmer
-			sound.play('oneVoice');
+			sound.play('warmSound');
 			$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Warmer");
 		}
 		else if (ultDiff === penultDiff) {
@@ -90,6 +96,7 @@ $("#guess-submit").click(function() {
 		else {
 			$("#winLose").text("Colder");
 			//##<br/>is Colder
+			sound.play('coldSound');
 			$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Colder");
 		}
 	}
