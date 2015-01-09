@@ -117,9 +117,9 @@ body {
         #guesses div div div div.cold {
           padding-top: 9px; } }
     #guesses div div div div.same {
-      background-color: #868686;
-      text-shadow: 0px 2px 3px #FFFFCC;
-      color: black;
+      background-color: #E79822;
+      text-shadow: 0px 2px 3px #555555;
+      color: #FFFFFF;
       padding-top: 25px;
       background-image: none; }
       @media screen and (max-width: 685px) {

@@ -158,9 +158,9 @@ body {
 			}
 		}
 		&.same {
-			background-color: $light-gray;
-			text-shadow: $text-shadow-light;
-			color: black;
+			background-color: $orange;
+			text-shadow: $text-shadow-dark;
+			color: $white;
 			padding-top: $guess-padding-status;
 			background-image: none;
 			@media screen and (max-width: $break-small) {

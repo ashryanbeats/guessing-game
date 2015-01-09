@@ -112,7 +112,7 @@ $("#guess-submit").click(function() {
 				sound.play('winSound');
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
-				$(".display-answer").text(answer);
+				$(".display-answer").text("The answer was " + answer + ". You're a great guesser!");
 				$('.win-modal-sm').modal("show");				
 			}
 			else {
@@ -121,7 +121,7 @@ $("#guess-submit").click(function() {
 				sound.play('loseSound');
 				$("#" + (guessLimit + 1)).addClass("lose").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Lose!");
 		
-				$(".display-answer").text(answer);
+				$(".display-answer").text("That's too bad. The number you were looking for was " + answer + ".");
 				$('.lose-modal-sm').modal("show");				
 			}
 		}
@@ -157,7 +157,7 @@ $(".restart").click(function() {
 });
 
 $("#give-answer").click(function() {
-	$(".display-answer").text(answer);
+	$(".display-answer").text("The answer you were looking for in this round was " + answer + ".");
 	
 	//DEBUG
 	$("#winLose").text("Lose");
