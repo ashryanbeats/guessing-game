@@ -12,7 +12,7 @@ var ultDiff = 0;
 var penultDiff = 0;
 
 var sound = new Howl({
-  urls: ['sounds/sound2.ogg', 'sounds/sound2.mp3'],
+  src: ['sounds/sound2.ogg', 'sounds/sound2.mp3'],
   sprite: {
     oneVoice: [0, 2000]
   }
