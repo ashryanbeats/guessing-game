@@ -53,6 +53,7 @@ $("#guess-submit").click(function() {
 		$("#userAnswer").text(userAnswer);
 		
 		// Temperature and Win
+		// first card
 		if (userAnswer.length === 1) {
 			if (userAnswer[0] === answer) {
 				sound.play('winSound');
@@ -75,40 +76,55 @@ $("#guess-submit").click(function() {
 				$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Cold");
 			}
 		}
-		else if (userAnswerUlt === answer) {
-			$("#winLose").text("Win");
-			//##<br/>is Win!
-			sound.play('winSound');
-			$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
-			
-			$(".display-answer").text(answer);
-			$('.win-modal-sm').modal("show");
-		}
-		else if (ultDiff < penultDiff) {
-			$("#winLose").text("Warmer");
-			//##<br/>is Warmer
-			sound.play('warmSound');
-			$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Warmer");
-		}
-		else if (ultDiff === penultDiff) {
-			$("#winLose").text("Same");
-			//##<br/>is Same
-			sound.play("sameSound");
-			$("#" + (guessLimit + 1)).addClass("same").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Same");
-		}
-		else {
-			$("#winLose").text("Colder");
-			//##<br/>is Colder
-			sound.play('coldSound');
-			$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Colder");
-		}
-	}
-	if (userAnswer.length === 8) {
-		$("#winLose").text("Lose"); 
+		// second to seventh cards
+		else if (userAnswer.length > 0 && userAnswer.length < 8)
+			if (userAnswerUlt === answer) {
+				$("#winLose").text("Win");
+				//##<br/>is Win!
+				sound.play('winSound');
+				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
+				
+				$(".display-answer").text(answer);
+				$('.win-modal-sm').modal("show");
+			}
+			else if (ultDiff < penultDiff) {
+				$("#winLose").text("Warmer");
+				//##<br/>is Warmer
+				sound.play('warmSound');
+				$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Warmer");
+			}
+			else if (ultDiff === penultDiff) {
+				$("#winLose").text("Same");
+				//##<br/>is Same
+				sound.play("sameSound");
+				$("#" + (guessLimit + 1)).addClass("same").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Same");
+			}
+			else {
+				$("#winLose").text("Colder");
+				//##<br/>is Colder
+				sound.play('coldSound');
+				$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Colder");
+			}
+		else if (userAnswer.length === 8) {
+			if (userAnswerUlt === answer) {
+				$("#winLose").text("Win");
+				//##<br/>is Win!
+				sound.play('winSound');
+				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
+				
+				$(".display-answer").text(answer);
+				$('.win-modal-sm').modal("show");				
+			}
+			else {
+				$("#winLose").text("Lose"); 
+				
+				sound.play('loseSound');
+				$("#" + (guessLimit + 1)).addClass("lose").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Lose!");
 		
-		sound.play('loseSound');
-		$(".display-answer").text(answer);
-		$('.lose-modal-sm').modal("show");
+				$(".display-answer").text(answer);
+				$('.lose-modal-sm').modal("show");				
+			}
+		}
 	}
 });
 
@@ -128,7 +144,7 @@ $(".restart").click(function() {
 	// reset cards
 	var cardNumber = 1;
 	for (var i = guessLimit; i > 0; i--) {
-		$("#" + i).removeClass("warm cold win same").addClass("guess").html("Guess" + "<br/>" + "#" + cardNumber);
+		$("#" + i).removeClass("warm cold win same lose").addClass("guess").html("Guess" + "<br/>" + "#" + cardNumber);
 		cardNumber++;
 	}
 	

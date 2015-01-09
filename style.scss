@@ -183,6 +183,19 @@ body {
 				padding-top: $guess-padding-status-smallest;
 			}
 		}
+		&.lose {
+			background-color: $light-gray;
+			text-shadow: $text-shadow-light;
+			color: black;
+			padding-top: $guess-padding-status;
+			background-image: none;
+			@media screen and (max-width: $break-small) {
+				padding-top: $guess-padding-status-small;
+			}
+			@media screen and (max-width: $break-smallest) {
+				padding-top: $guess-padding-status-smallest;
+			}
+		}
 	}
 }
 
