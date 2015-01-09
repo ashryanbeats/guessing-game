@@ -11,6 +11,13 @@ var userAnswerPenult = 0;
 var ultDiff = 0;
 var penultDiff = 0;
 
+var sound = new Howl({
+  urls: ['sounds/sound2.ogg', 'sounds/sound2.mp3'],
+  sprite: {
+    oneVoice: [0, 2000]
+  }
+});
+
 $("#guess-submit").click(function() {
 	// Getting the input
 	if (isNaN($("#guess-input").val())) { // if not a number
@@ -72,6 +79,7 @@ $("#guess-submit").click(function() {
 		else if (ultDiff < penultDiff) {
 			$("#winLose").text("Warmer");
 			//##<br/>is Warmer
+			sound.play('oneVoice');
 			$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Warmer");
 		}
 		else if (ultDiff === penultDiff) {
