@@ -61,7 +61,7 @@ $("#guess-submit").click(function() {
 				sound.play('winSound');
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
-				$(".display-answer").text(answer);
+				$(".display-answer").text("The answer was " + answer + ". You're a great guesser!");
 				$('.win-modal-sm').modal("show");
 			}
 			else if (ultDiff < 25) {
@@ -86,7 +86,7 @@ $("#guess-submit").click(function() {
 				sound.play('winSound');
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
-				$(".display-answer").text(answer);
+				$(".display-answer").text("The answer was " + answer + ". You're a great guesser!");
 				$('.win-modal-sm').modal("show");
 			}
 			else if (ultDiff < penultDiff) {
