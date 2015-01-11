@@ -24,20 +24,25 @@ var sound = new Howl({
 
 $("#guess-submit").click(function() {
 	// Getting the input
-	if (isNaN($("#guess-input").val())) { // if not a number
+	if ($("#guess-input").val() === "") { // if not a number
 		// DEBUG
 		$("#warning").text("Numbers please!");
 		
-		$("span#warning-number").css({"font-weight": "bold"});
+		$("#warning-number").addClass("warn-text");
 		$("#guess-input").val(""); // reset the input field
 	}
 	else if ($("#guess-input").val() < 1 || $("#guess-input").val() > 100) { // if out of range
 		// DEBUG
 		$("#warning").text("Between 1 and 100 please!!");
+		
+		$("#warning-scope").addClass("warn-text");
 		$("#guess-input").val(""); // reset the input field
 	}
 	else if (!isNaN($("#guess-input").val())) { // if it's a number
-		$("#warning").text(""); // reset warnings
+		// reset warnings
+		$("#warning").text("");
+		$("#warning-number").removeClass("warn-text");
+		$("#warning-scope").removeClass("warn-text");
 		userAnswer.push(+$("#guess-input").val()); // push input to the userAnswer array. + converts the input to a number.
 		
 		// set variables

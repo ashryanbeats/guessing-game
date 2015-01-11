@@ -93,6 +93,10 @@ body {
 		margin-bottom: 0;
 	}
 }
+.warn-text {
+	font-weight: bold;
+	color: $red;
+}
 
 #guesses {
 	margin-bottom: $margin-bottom-section;

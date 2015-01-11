@@ -56,6 +56,10 @@ body {
       padding: 5px 0;
       margin-bottom: 0; } }
 
+.warn-text {
+  font-weight: bold;
+  color: #FF2F7C; }
+
 #guesses {
   margin-bottom: 25px; }
   #guesses div div div div {
