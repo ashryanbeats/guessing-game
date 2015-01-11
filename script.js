@@ -174,3 +174,7 @@ $("#give-answer").click(function() {
 	$("#winLose").text("Lose");
 	$("#userAnswer").text(answer);
 });
+
+$(".guess, .warm, .cold, .same").click(function() {
+	$("#guess-input").focus();
+});
