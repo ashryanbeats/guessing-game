@@ -155,6 +155,10 @@ $(".restart").click(function() {
 		cardNumber++;
 	}
 	
+	// reset warnings
+	$("#warning-number").removeClass("warn-text");
+	$("#warning-scope").removeClass("warn-text");
+	
 	// DEBUG
 	$("#answer").text(answer);
 	$("#userAnswerLast").text("Last: " + userAnswerUlt);	
