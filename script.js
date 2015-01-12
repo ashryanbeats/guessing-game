@@ -17,7 +17,7 @@ var sound = new Howl({
     warmSound: [0, 750],
     coldSound: [875, 950],
     winSound: [1930, 2500],
-    sameSound: [4518, 850],
+    sameSound: [4518, 83850],
     loseSound: [6093, 1700]
   }
 });
@@ -181,7 +181,7 @@ $("#give-answer").click(function() {
 	$("#userAnswer").text(answer);
 });
 
-$(".guess, .warm, .cold, .same").click(function() {
+$("#guesses").click(function() {
 	$("#guess-input").focus();
 });
 
