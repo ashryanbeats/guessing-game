@@ -14,10 +14,10 @@ var penultDiff = 0;
 var sound = new Howl({
   src: ['sounds/game-sounds.ogg', 'sounds/game-sounds.mp3'],
   sprite: {
-    warmSound: [0, 600],
-    coldSound: [875, 750],
-    winSound: [1918, 2500],
-    sameSound: [4518, 500],
+    warmSound: [0, 750],
+    coldSound: [875, 950],
+    winSound: [1930, 2500],
+    sameSound: [4518, 850],
     loseSound: [6093, 1700]
   }
 });
