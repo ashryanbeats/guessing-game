@@ -44,7 +44,7 @@ body {
   padding: 25px 0;
   width: 400px;
   color: #FF2F7C;
-  background-image: url('../guessing-game/images/question-mark-background.png'); }
+  background-image: url('images/question-mark-background.png'); }
   @media screen and (max-width: 565px) {
     #guess-input {
       font-size: 26px;
