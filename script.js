@@ -68,6 +68,7 @@ $("#guess-submit").click(function() {
 				
 				$(".display-answer").text("The answer was " + answer + ". You're a great guesser!");
 				$('.win-modal-sm').modal("show");
+				disable();
 			}
 			else if (ultDiff < 25) {
 				$("#winLose").text("Warm");
@@ -93,6 +94,7 @@ $("#guess-submit").click(function() {
 				
 				$(".display-answer").text("The answer was " + answer + ". You're a great guesser!");
 				$('.win-modal-sm').modal("show");
+				disable();
 			}
 			else if (ultDiff < penultDiff) {
 				$("#winLose").text("Warmer");
@@ -112,6 +114,7 @@ $("#guess-submit").click(function() {
 				sound.play('coldSound');
 				$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Colder");
 			}
+		// last card
 		else if (userAnswer.length === 8) {
 			if (userAnswerUlt === answer) {
 				$("#winLose").text("Win");
@@ -120,7 +123,8 @@ $("#guess-submit").click(function() {
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
 				$(".display-answer").text("The answer was " + answer + ". You're a great guesser!");
-				$('.win-modal-sm').modal("show");				
+				$('.win-modal-sm').modal("show");	
+				disable();			
 			}
 			else {
 				$("#winLose").text("Lose"); 
@@ -129,7 +133,8 @@ $("#guess-submit").click(function() {
 				$("#" + (guessLimit + 1)).addClass("lose").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Lose!");
 		
 				$(".display-answer").text("That's too bad. The number you were looking for was " + answer + ".");
-				$('.lose-modal-sm').modal("show");				
+				$('.lose-modal-sm').modal("show");
+				disable();				
 			}
 		}
 	}
@@ -147,6 +152,7 @@ $(".restart").click(function() {
 	
 	// reset UI
 	$("#guess-input").val(""); // reset the input field
+	$("#guess-input, #guess-submit").removeAttr("disabled");
 	
 	// reset cards
 	var cardNumber = 1;
@@ -178,3 +184,7 @@ $("#give-answer").click(function() {
 $(".guess, .warm, .cold, .same").click(function() {
 	$("#guess-input").focus();
 });
+
+var disable = function() {
+	$("#guess-input, #guess-submit").attr("disabled", "true");
+}
