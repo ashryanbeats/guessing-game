@@ -127,7 +127,7 @@ body {
 			text-shadow: $text-shadow-light;
 			color: $gray;
 			padding-top: $guess-padding-default;
-			background-image: url('../guessing-game/images/question-mark-background.png');
+			background-image: url('images/question-mark-background.png');
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-default-small;
 			}
