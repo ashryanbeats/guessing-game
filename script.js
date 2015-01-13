@@ -25,7 +25,9 @@ var sound = new Howl({
 // Messages
 var winMessage = "The answer was " + answer + ". You're a great guesser!";
 var loseMessage = "That's too bad. The number you were looking for was " + answer + ".";
+var giveAnswerTitle = "The answer was...";
 var giveAnswerMessage = "The answer you were looking for in this round was " + answer + ".";
+var restartTitle = "Do you really want to restart?";
 var restartMessage = "Your previous guesses will be cleared and the mystery number will be reset to a new number.";
 
 
@@ -183,8 +185,11 @@ $(".restart").click(function() {
 	$("#warning").text("");
 });
 
+
+// messaging for restart buttons
 $("#give-answer").click(function() {
-	$(".display-answer").text(giveAnswerMessage);
+	$(".modal-title").text(giveAnswerTitle);
+	$(".modal-body").text(giveAnswerMessage);
 	
 	//DEBUG
 	$("#winLose").text("Lose");
@@ -192,12 +197,14 @@ $("#give-answer").click(function() {
 });
 
 $("#restart-button").click(function() {
-	$(".display-answer").text(restartMessage);
+	$(".modal-title").text(restartTitle);
+	$(".modal-body").text(restartMessage);
 	
 	//DEBUG
 	$("#winLose").text("Lose");
 	$("#userAnswer").text(answer);
 });
+
 
 // focus on the input when cards are clicked 
 $("#guesses").click(function() {
