@@ -240,6 +240,13 @@ footer {
 }
 
 // Modal
-.modal-title {
+.modal-header {
+	background-color: $purple;
+	text-shadow: $text-shadow-dark;
+	color: $white;
 	font-family: $cursive-font;
+	
+}
+.modal-title {
+	font-size: 28px;
 }

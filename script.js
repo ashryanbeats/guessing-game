@@ -22,6 +22,13 @@ var sound = new Howl({
   }
 });
 
+// Messages
+var winMessage = "The answer was " + answer + ". You're a great guesser!";
+var loseMessage = "That's too bad. The number you were looking for was " + answer + ".";
+var giveAnswerMessage = "The answer you were looking for in this round was " + answer + ".";
+var restartMessage = "Your previous guesses will be cleared and the mystery number will be reset to a new number.";
+
+
 $("#guess-submit").click(function() {
 	// Getting the input
 	if ($("#guess-input").val() === "") { // if not a number
@@ -66,11 +73,12 @@ $("#guess-submit").click(function() {
 				sound.play('winSound');
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
-				$(".display-answer").text("The answer was " + answer + ". You're a great guesser!");
+				$(".display-answer").text(winMessage);
 				$('.win-modal-sm').modal("show");
 				disable();
 			}
 			else if (ultDiff < 25) {
+				//DEBUG
 				$("#winLose").text("Warm");
 				
 				//##<br/>is Warm
@@ -78,7 +86,9 @@ $("#guess-submit").click(function() {
 				$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Warm");
 			}
 			else {
+				//DEBUG
 				$("#winLose").text("Cold");
+				
 				//##<br/>is Cold
 				sound.play('coldSound');
 				$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Cold");
@@ -92,7 +102,7 @@ $("#guess-submit").click(function() {
 				sound.play('winSound');
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
-				$(".display-answer").text("The answer was " + answer + ". You're a great guesser!");
+				$(".display-answer").text(winMessage);
 				$('.win-modal-sm').modal("show");
 				disable();
 			}
@@ -122,7 +132,7 @@ $("#guess-submit").click(function() {
 				sound.play('winSound');
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
-				$(".display-answer").text("The answer was " + answer + ". You're a great guesser!");
+				$(".display-answer").text(winMessage);
 				$('.win-modal-sm').modal("show");	
 				disable();			
 			}
@@ -132,7 +142,7 @@ $("#guess-submit").click(function() {
 				sound.play('loseSound');
 				$("#" + (guessLimit + 1)).addClass("lose").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Lose!");
 		
-				$(".display-answer").text("That's too bad. The number you were looking for was " + answer + ".");
+				$(".display-answer").text(loseMessage);
 				$('.lose-modal-sm').modal("show");
 				disable();				
 			}
@@ -170,17 +180,26 @@ $(".restart").click(function() {
 	$("#userAnswerLast").text("Last: " + userAnswerUlt);	
 	$("#userAnswer").text(userAnswer);
 	$("#winLose").text("Restarted");
-	$("#warning").text(""); // reset warnings
+	$("#warning").text("");
 });
 
 $("#give-answer").click(function() {
-	$(".display-answer").text("The answer you were looking for in this round was " + answer + ".");
+	$(".display-answer").text(giveAnswerMessage);
 	
 	//DEBUG
 	$("#winLose").text("Lose");
 	$("#userAnswer").text(answer);
 });
 
+$("#restart-button").click(function() {
+	$(".display-answer").text(restartMessage);
+	
+	//DEBUG
+	$("#winLose").text("Lose");
+	$("#userAnswer").text(answer);
+});
+
+// focus on the input when cards are clicked 
 $("#guesses").click(function() {
 	$("#guess-input").focus();
 });
