@@ -186,3 +186,6 @@ footer {
 .debug {
   visibility: hidden;
   position: absolute; }
+
+.modal-title {
+  font-family: 'Lobster', cursive; }
