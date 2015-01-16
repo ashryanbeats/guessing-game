@@ -22,13 +22,7 @@ var sound = new Howl({
   }
 });
 
-// Messages
-var winTitle = "Nice win!";
-var winMessage = "The answer was " + answer + ". You're a great guesser!";
-var loseTitle = "Oh no, you lost..."
-var loseMessage = "That's too bad. The number you were looking for was " + answer + ".";
-var giveAnswerTitle = "The answer was...";
-var giveAnswerMessage = "The answer you were looking for in this round was " + answer + ".";
+// Static Messages
 var restartTitle = "Do you really want to restart?";
 var restartMessage = "Your previous guesses will be cleared and the mystery number will be reset to a new number.";
 var nevermindButton = '<button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>';
@@ -151,6 +145,9 @@ $(".restart").click(function() {
 
 // modals
 $("#give-answer").click(function() {
+	var giveAnswerTitle = "The answer was...";
+	var giveAnswerMessage = "The answer you were looking for in this round was " + answer + ".";
+	
 	// messages
 	$(".modal-title").text(giveAnswerTitle);
 	$(".modal-body").text(giveAnswerMessage);
@@ -198,11 +195,16 @@ var disable = function() {
 }
 
 var winLose = function(outcome) {
+	var winTitle = "Nice win!";
+	var winMessage = "The answer was " + answer + ". You're a great guesser!";
+	var loseTitle = "Oh no, you lost..."
+	var loseMessage = "That's too bad. The number you were looking for was " + answer + ".";
+	
 	// modal buttons
 	$("#modal-button-1").html("");
 	$("#modal-button-2").html(restartButton);
-	$("#modal-button-3").html("");
-	
+	$("#modal-button-3").html("");	
+		
 	if (outcome === "win") {
 		// sound
 		sound.play('winSound');				
