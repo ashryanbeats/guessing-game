@@ -186,6 +186,13 @@ $("#guesses").click(function() {
 	$("#guess-input").focus();
 });
 
+// allow user to enter their guess with the return key
+$("#submit-area").keyup(function(event) {
+	if(event.keyCode === 13) {
+		$("#guess-submit").click();
+	}
+});
+
 var disable = function() {
 	$("#guess-input, #guess-submit").attr("disabled", "true");
 }
