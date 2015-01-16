@@ -23,13 +23,17 @@ var sound = new Howl({
 });
 
 // Messages
+var winTitle = "Nice win!";
 var winMessage = "The answer was " + answer + ". You're a great guesser!";
+var loseTitle = "Oh no, you lost..."
 var loseMessage = "That's too bad. The number you were looking for was " + answer + ".";
 var giveAnswerTitle = "The answer was...";
 var giveAnswerMessage = "The answer you were looking for in this round was " + answer + ".";
 var restartTitle = "Do you really want to restart?";
 var restartMessage = "Your previous guesses will be cleared and the mystery number will be reset to a new number.";
-
+var nevermindButton = '<button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>';
+var restartButton = '<input class="btn btn-danger restart" type="button" value="Restart" data-dismiss="modal">';
+var nevermindButton = '<button type="button" class="btn btn-default" data-dismiss="modal">Nevermind</button>';
 
 $("#guess-submit").click(function() {
 	// Getting the input
@@ -75,8 +79,9 @@ $("#guess-submit").click(function() {
 				sound.play('winSound');
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
-				$(".display-answer").text(winMessage);
-				$('.win-modal-sm').modal("show");
+				$(".modal-title").text(winTitle);
+				$(".modal-body").text(winMessage);
+				$('.modal').modal("show");
 				disable();
 			}
 			else if (ultDiff < 25) {
@@ -99,29 +104,38 @@ $("#guess-submit").click(function() {
 		// second to seventh cards
 		else if (userAnswer.length > 0 && userAnswer.length < 8)
 			if (userAnswerUlt === answer) {
+				//DEBUG
 				$("#winLose").text("Win");
+				
 				//##<br/>is Win!
 				sound.play('winSound');
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
-				$(".display-answer").text(winMessage);
-				$('.win-modal-sm').modal("show");
+				$(".modal-title").text(winTitle);
+				$(".modal-body").text(winMessage);
+				$('.modal').modal("show");				
 				disable();
 			}
 			else if (ultDiff < penultDiff) {
+				//DEBUG
 				$("#winLose").text("Warmer");
+				
 				//##<br/>is Warmer
 				sound.play('warmSound');
 				$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Warmer");
 			}
 			else if (ultDiff === penultDiff) {
+				//DEBUG
 				$("#winLose").text("Same");
+				
 				//##<br/>is Same
 				sound.play("sameSound");
 				$("#" + (guessLimit + 1)).addClass("same").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Same");
 			}
 			else {
+				//DEBUG
 				$("#winLose").text("Colder");
+				
 				//##<br/>is Colder
 				sound.play('coldSound');
 				$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Colder");
@@ -129,23 +143,28 @@ $("#guess-submit").click(function() {
 		// last card
 		else if (userAnswer.length === 8) {
 			if (userAnswerUlt === answer) {
+				//DEBUG
 				$("#winLose").text("Win");
+				
 				//##<br/>is Win!
 				sound.play('winSound');
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
-				$(".display-answer").text(winMessage);
-				$('.win-modal-sm').modal("show");	
+				$(".modal-title").text(winTitle);
+				$(".modal-body").text(winMessage);
+				$('.modal').modal("show");	
 				disable();			
 			}
 			else {
+				//DEBUG
 				$("#winLose").text("Lose"); 
 				
 				sound.play('loseSound');
 				$("#" + (guessLimit + 1)).addClass("lose").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Lose!");
 		
-				$(".display-answer").text(loseMessage);
-				$('.lose-modal-sm').modal("show");
+				$(".modal-title").text(loseTitle);
+				$(".modal-body").text(loseMessage);
+				$('.modal').modal("show");
 				disable();				
 			}
 		}
@@ -186,10 +205,16 @@ $(".restart").click(function() {
 });
 
 
-// messaging for restart buttons
+// modals
 $("#give-answer").click(function() {
+	// messages
 	$(".modal-title").text(giveAnswerTitle);
 	$(".modal-body").text(giveAnswerMessage);
+	
+	// buttons
+	$("#modal-button-1").html("");
+	$("#modal-button-2").html(restartButton);
+	$("#modal-button-3").html("");
 	
 	//DEBUG
 	$("#winLose").text("Lose");
@@ -197,8 +222,14 @@ $("#give-answer").click(function() {
 });
 
 $("#restart-button").click(function() {
+	// messages
 	$(".modal-title").text(restartTitle);
 	$(".modal-body").text(restartMessage);
+	
+	// buttons
+	$("#modal-button-1").html(nevermindButton);
+	$("#modal-button-2").html(restartButton);
+	$("#modal-button-3").html("");
 	
 	//DEBUG
 	$("#winLose").text("Lose");
