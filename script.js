@@ -76,90 +76,38 @@ $("#guess-submit").click(function() {
 		// first card
 		if (userAnswer.length === 1) {
 			if (userAnswer[0] === answer) {
-				sound.play('winSound');
-				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
-				
 				winLose("win");
 				disable();
 			}
 			else if (ultDiff < 25) {
-				//DEBUG
-				$("#winLose").text("Warm");
-				
-				//##<br/>is Warm
-				sound.play('warmSound');
-				$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Warm");
+				temp("warm", "is Warm");
 			}
 			else {
-				//DEBUG
-				$("#winLose").text("Cold");
-				
-				//##<br/>is Cold
-				sound.play('coldSound');
-				$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Cold");
+				temp("cold", "is Cold");
 			}
 		}
 		// second to seventh cards
 		else if (userAnswer.length > 0 && userAnswer.length < 8)
-			if (userAnswerUlt === answer) {
-				//DEBUG
-				$("#winLose").text("Win");
-				
-				//##<br/>is Win!
-				sound.play('winSound');
-				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
-				
-				$(".modal-title").text(winTitle);
-				$(".modal-body").text(winMessage);
-				$('.modal').modal("show");				
+			if (userAnswerUlt === answer) {				
+				winLose("win");
 				disable();
 			}
 			else if (ultDiff < penultDiff) {
-				//DEBUG
-				$("#winLose").text("Warmer");
-				
-				//##<br/>is Warmer
-				sound.play('warmSound');
-				$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Warmer");
+				temp("warm", "is Warmer");
 			}
 			else if (ultDiff === penultDiff) {
-				//DEBUG
-				$("#winLose").text("Same");
-				
-				//##<br/>is Same
-				sound.play("sameSound");
-				$("#" + (guessLimit + 1)).addClass("same").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Same");
+				temp("same", "is Same");
 			}
 			else {
-				//DEBUG
-				$("#winLose").text("Colder");
-				
-				//##<br/>is Colder
-				sound.play('coldSound');
-				$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Colder");
+				temp("cold", "is Colder");
 			}
 		// last card
 		else if (userAnswer.length === 8) {
 			if (userAnswerUlt === answer) {
-				//DEBUG
-				$("#winLose").text("Win");
-				
-				//##<br/>is Win!
-				sound.play('winSound');
-				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
-				
-				$(".modal-title").text(winTitle);
-				$(".modal-body").text(winMessage);
-				$('.modal').modal("show");	
+				winLose("win");
 				disable();			
 			}
 			else {
-				//DEBUG
-				$("#winLose").text("Lose"); 
-				
-				sound.play('loseSound');
-				$("#" + (guessLimit + 1)).addClass("lose").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Lose!");
-		
 				winLose("lose");
 				disable();				
 			}
@@ -249,13 +197,41 @@ var winLose = function(outcome) {
 	$("#modal-button-3").html("");
 	
 	if (outcome === "win") {
+		// sound
+		sound.play('winSound');				
+		
+		// card
+		$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
+		
+		// modal
 		$(".modal-title").text(winTitle);
 		$(".modal-body").text(winMessage);
 		$('.modal').modal("show");
 	}
 	else if (outcome === "lose") {
+		// sound
+		sound.play('loseSound');
+		// card
+		$("#" + (guessLimit + 1)).addClass("lose").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Lose!");
+		
+		// modal
 		$(".modal-title").text(loseTitle);
 		$(".modal-body").text(loseMessage);
 		$('.modal').modal("show");
+	}
+}
+
+var temp = function(status, message) {
+	if (status === "warm") {
+		sound.play('warmSound');
+		$("#" + (guessLimit + 1)).addClass("warm").removeClass("guess").html(userAnswerUlt + "<br/>" + message);
+	}
+	else if (status === "cold") {
+		sound.play('coldSound');
+		$("#" + (guessLimit + 1)).addClass("cold").removeClass("guess").html(userAnswerUlt + "<br/>" + message);
+	}
+	else if (status === "same") {
+		sound.play("sameSound");
+		$("#" + (guessLimit + 1)).addClass("same").removeClass("guess").html(userAnswerUlt + "<br/>" + message);	
 	}
 }
