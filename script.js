@@ -79,9 +79,7 @@ $("#guess-submit").click(function() {
 				sound.play('winSound');
 				$("#" + (guessLimit + 1)).addClass("win").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Win!");
 				
-				$(".modal-title").text(winTitle);
-				$(".modal-body").text(winMessage);
-				$('.modal').modal("show");
+				winLose("win");
 				disable();
 			}
 			else if (ultDiff < 25) {
@@ -162,9 +160,7 @@ $("#guess-submit").click(function() {
 				sound.play('loseSound');
 				$("#" + (guessLimit + 1)).addClass("lose").removeClass("guess").html(userAnswerUlt + "<br/>" + "is Lose!");
 		
-				$(".modal-title").text(loseTitle);
-				$(".modal-body").text(loseMessage);
-				$('.modal').modal("show");
+				winLose("lose");
 				disable();				
 			}
 		}
@@ -244,4 +240,22 @@ $("#guesses").click(function() {
 
 var disable = function() {
 	$("#guess-input, #guess-submit").attr("disabled", "true");
+}
+
+var winLose = function(outcome) {
+	// modal buttons
+	$("#modal-button-1").html("");
+	$("#modal-button-2").html(restartButton);
+	$("#modal-button-3").html("");
+	
+	if (outcome === "win") {
+		$(".modal-title").text(winTitle);
+		$(".modal-body").text(winMessage);
+		$('.modal').modal("show");
+	}
+	else if (outcome === "lose") {
+		$(".modal-title").text(loseTitle);
+		$(".modal-body").text(loseMessage);
+		$('.modal').modal("show");
+	}
 }
