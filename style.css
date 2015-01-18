@@ -137,7 +137,7 @@ body {
       text-shadow: 0px 2px 3px #555555;
       color: #FFFFFF;
       padding-top: 25px;
-      background-image: none; }
+      background-image: url('images/heart-background.png'); }
       @media screen and (max-width: 685px) {
         #guesses div div div div.win {
           padding-top: 17px; } }
@@ -149,7 +149,7 @@ body {
       text-shadow: 0px 2px 3px #FFFFCC;
       color: black;
       padding-top: 25px;
-      background-image: none; }
+      background-image: url('images/skull-background.png'); }
       @media screen and (max-width: 685px) {
         #guesses div div div div.lose {
           padding-top: 17px; } }

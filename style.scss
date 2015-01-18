@@ -179,7 +179,7 @@ body {
 			text-shadow: $text-shadow-dark;
 			color: $white;
 			padding-top: $guess-padding-status;
-			background-image: none;
+			background-image: url('images/heart-background.png');;
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-status-small;
 			}
@@ -192,7 +192,7 @@ body {
 			text-shadow: $text-shadow-light;
 			color: black;
 			padding-top: $guess-padding-status;
-			background-image: none;
+			background-image: url('images/skull-background.png');
 			@media screen and (max-width: $break-small) {
 				padding-top: $guess-padding-status-small;
 			}
